@@ -15,17 +15,35 @@
 
 </head>
 <body>
-    <input placeholder="Distancia em Km" name="distanciaKm"/>
-    <input placeholder="Tempo em Minutos" name="tempoMinutos"/>
-    <button onclick="alert('Calculo do App')">Calcula</button>
+    <input placeholder="Distancia em Km" id="campoDistanciaKm"/>
+    <input placeholder="Tempo em Minutos" id="campoTempoMinutos"/>
+    <button onclick="calculaCorrida()">Calcula</button>
 
     <script>
-        // Organizar as entradas
-        distanciaKm = 10;
-        tempoMinutos = 5;
-        valorCorrida = 7;
+        
+        function formataMoeda(algumValor){
+            return 'R$' + algumValor.toFixed(2).replace('.',',');
+        }
 
-        alert(valorCorrida);
+        function calculaCorrida() {
+
+            // Validar na entrada / Fail Fast Validations
+            if (campoDistanciaKm.value == 0 ||
+                campoTempoMinutos.value == 0) {
+
+                alert('Obrigatório informar valores');
+                return;
+            } 
+
+            // Organizar as entradas e aplicar a regra de negócio
+            var tarifaDinamica = 1.4;
+            var distanciaKm = campoDistanciaKm.value * tarifaDinamica;
+            var tempoMinutos = campoTempoMinutos.value * 0.26
+            var valorCorrida = distanciaKm + tempoMinutos;
+
+            alert(' O valor da corrida é: ' + formataMoeda(valorCorrida));
+            
+        }
 
     </script>
 
