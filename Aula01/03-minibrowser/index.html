@@ -5,7 +5,15 @@
     </header>
     <iframe src="https://mariosouto.com"></iframe>
 </main> -->
-
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mini Browser Experimental</title>
+</head>
+<body>
+    
 <script>
 
     // O que tem em uma aba?
@@ -24,12 +32,28 @@
         url: 'www.github.com'
     };
 
+    // Entrada
     // Listas/Arrays
     const abas = [
         aba1,
         aba2
     ];
 
+    // Processamento
+    for(aba of abas) {
+        console.log(aba.titulo);
+        
+        // output
+        var valorAtualHTML = document.body.innerHTML;
+
+        document.body.innerHTML = valorAtualHTML + aba.titulo + '<br>';
+
+        
+    }
+
 </script>
 
 <link rel="stylesheet" href="./style.css" />
+
+</body>
+</html>
