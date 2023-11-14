@@ -13,16 +13,16 @@
         // Quem entra primeiro, sai primeiro (FIFO)
 
         var fila = [
-            // 'script.js',
-            // 'style.css',
-            // 'imagem.png',
+            'script.js',
+            'style.css',
+            'imagem.png',
         ];
 
         // Adiciona alguém na fila
-        //fila.push('doguinho.jpeg');
+        fila.push('doguinho.jpeg');
 
         // Remove o primeiro da fila
-        //fila.shift();
+        fila.shift();
 
         // Receita para criar fila
         // - enqueue = enfileirar
@@ -47,6 +47,9 @@
         }
 
         var requests = new Queue();
+        // Princípio Open Closed
+        // Open: aberto para exetensão
+        // Closed: fechado para modificação
         requests.enqueue('scripts.js');
         requests.print();
         requests.enqueue('style.css');
