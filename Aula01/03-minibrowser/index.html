@@ -29,7 +29,7 @@
 
     var aba2 = {
         titulo: 'Titulo aba 2',
-        url: 'www.github.com'
+        url: 'http://github.com'
     };
 
     // Entrada
@@ -46,14 +46,13 @@
         // output
         var valorAtualHTML = document.body.innerHTML;
 
-        document.body.innerHTML = valorAtualHTML + aba.titulo + '<br>';
+        document.body.innerHTML = valorAtualHTML + `<li><a href="${aba.url}">${aba.titulo}<a/></li>`;
 
-        
     }
 
 </script>
 
-<link rel="stylesheet" href="./style.css" />
+<!-- <link rel="stylesheet" href="./style.css" /> -->
 
 </body>
 </html>

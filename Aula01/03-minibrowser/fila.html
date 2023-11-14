@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fila/Queue</title>
+</head>
+<body>
+    <script>
+        console.log('Fila/Queue')
+        // Pessoas, ou qualquer tipo de dado
+        // Uma atrás da outra, a ordem importa
+        // Quem entra primeiro, sai primeiro (FIFO)
+
+        var fila = [
+            // 'script.js',
+            // 'style.css',
+            // 'imagem.png',
+        ];
+
+        // Adiciona alguém na fila
+        //fila.push('doguinho.jpeg');
+
+        // Remove o primeiro da fila
+        //fila.shift();
+
+        // Receita para criar fila
+        // - enqueue = enfileirar
+        // - dequeue = desenfilerar
+
+        class Queue {
+            constructor() {
+                this.data = [];
+            }
+
+            print(){
+                console.log(this.data);
+            }
+
+            enqueue(varq) {
+                this.data.push(varq);
+            }
+            
+            dequeue() {
+                this.data.shift();
+            }
+        }
+
+        var requests = new Queue();
+        requests.enqueue('scripts.js');
+        requests.print();
+        requests.enqueue('style.css');
+        requests.enqueue('imagem.png');
+        requests.dequeue();
+        requests.enqueue('doguinho.jpeg');
+        requests.print();
+    </script>
+</body>
+</html>
