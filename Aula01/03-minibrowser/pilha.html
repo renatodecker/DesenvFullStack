@@ -7,9 +7,33 @@
 </head>
 <body>
     <script>
-        console.log('Pilha/Stack')
+        console.log('Pilha/Stack');
 
-        const history = new Stack();
+        class BrowserHistoryStack {
+            constructor(){
+                this.data = [];
+            }
+
+            push(item){
+                this.data.push(item);
+            }
+
+            back(){
+                this.data.pop();
+            }
+
+            print() {
+                console.log(this.data);
+            }
+        }
+
+        const history = new BrowserHistoryStack();
+        history.push('https://google.com');
+        history.push('https://youtube.com');
+        history.push('https://facebook.com');
+        history.print();
+        history.back();
+        history.print();
 
     </script>
 </body>
