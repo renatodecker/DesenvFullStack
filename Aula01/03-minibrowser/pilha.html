@@ -11,19 +11,23 @@
 
         class BrowserHistoryStack {
             constructor(){
+                this.cursor = 0;
                 this.data = [];
             }
 
             push(item){
+                this.cursor = this.cursor + 1;
                 this.data.push(item);
             }
 
             back(){
-                this.data.pop();
+                this.cursor = this.cursor - 1;
+                //this.data.pop();
             }
 
             print() {
                 console.log(this.data);
+                console.log(this.cursor);
             }
         }
 
